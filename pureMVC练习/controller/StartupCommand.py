@@ -1,6 +1,7 @@
 import puremvc.patterns.command
-
-
+from view.ViewMediator import ViewMediator
+from model.ModelProxy import ModelProxy
+from view.wxForm import wxFrame
 
 class StartupCommand(puremvc.patterns.command.SimpleCommand):
     def execute(self,Notification):
@@ -10,5 +11,6 @@ class StartupCommand(puremvc.patterns.command.SimpleCommand):
         app=Notification.getBody()
 
         #注册View和Model
-
+        self.facade.registerMediator(ViewMediator(None,app))
+        self.facade.registerProxy(ModelProxy(None,None))
     pass
