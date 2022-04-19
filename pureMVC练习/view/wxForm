@@ -1,0 +1,17 @@
+import wx
+
+
+class wxFrame(wx.Frame):
+    '''
+        一个无逻辑的界面展示
+    '''
+
+    def __init__(self,parent):
+
+        super(wxFrame,self).__init__(parent)
+        pass
+
+    #初始化控件
+    def initControl(self):
+
+        pass
